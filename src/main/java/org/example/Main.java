@@ -4,36 +4,27 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Carro c1 = new Carro("Toyota", "Corolla", 2020);
-        Carro c2 = new Carro("Ford", "Focus", 1800); // inválido
+        int x; // declarada fora
 
-        Carro.imprimirTotal();
+        if (true) {
+            x = 10; // atribuída dentro
+        }
 
-        // TESTE (DESCOMENTE PRA VER ERRO)
-        // Carro.ANO_PRIMEIRO_CARRO = 1900;
-
-        /*
-        FINAL:
-
-        - Uma variável final NÃO pode ser alterada
-        - É uma constante
-
-        Por isso usamos:
-        static final
-
-        SIGNIFICA:
-        - static → pertence à classe
-        - final → valor fixo
-
-        Exemplo:
-        ANO_PRIMEIRO_CARRO = 1886
-
-        Se tentar mudar:
-        → dá erro de compilação
-
-        Vantagem:
-        - evita valores mágicos no código
-        - melhora organização e segurança
-        */
+        System.out.println(x); // agora funciona
     }
 }
+/*
+ESCOPO:
+
+- Escopo é a região onde uma variável existe
+- A variável x foi criada dentro do if
+- Fora do if ela não existe
+
+Por isso deu erro
+
+Correção:
+- Declarar a variável fora do bloco
+
+Resumo:
+- Variáveis só existem dentro do bloco onde foram criadas
+*/
