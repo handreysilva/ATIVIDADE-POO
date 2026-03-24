@@ -8,20 +8,10 @@ public class Main {
 
         ArrayList<Carro> listaCarros = new ArrayList<>();
 
-        Carro c1 = new Carro();
-        c1.setMarca("Toyota");
-        c1.setModelo("Corolla");
-        c1.setAno(2020);
-
-        Carro c2 = new Carro();
-        c2.setMarca("Honda");
-        c2.setModelo("Civic");
-        c2.setAno(2022);
-
-        Carro c3 = new Carro();
-        c3.setMarca("Ford");
-        c3.setModelo("Focus");
-        c3.setAno(1800); // inválido (vai mostrar erro)
+        // agora criando direto com construtor
+        Carro c1 = new Carro("Toyota", "Corolla", 2020);
+        Carro c2 = new Carro("Honda", "Civic", 2022);
+        Carro c3 = new Carro("Ford", "Focus", 1800); // inválido
 
         listaCarros.add(c1);
         listaCarros.add(c2);
@@ -34,23 +24,21 @@ public class Main {
         }
 
         /*
-        ENCAPSULAMENTO:
-        - Protege os dados da classe
-        - Só permite acesso através de métodos (get e set)
-
-        Antes:
-        carro.marca = "Toyota" ❌
-
-        Agora:
-        carro.setMarca("Toyota") ✅
-
-        VALIDAÇÃO:
-        - O setter do ano impede valores inválidos
-        - Isso evita erros no sistema
+        CONSTRUTOR:
+        - É executado quando o objeto é criado
+        - Serve para inicializar os atributos
 
         Vantagem:
-        - Mais segurança
-        - Mais controle sobre os dados
+        - Evita ter que usar vários setters
+        - Objeto já nasce pronto
+
+        Antes:
+        Carro c = new Carro();
+        c.setMarca("Toyota");
+        c.setModelo("Corolla");
+
+        Agora:
+        Carro c = new Carro("Toyota", "Corolla", 2020);
         */
     }
 }

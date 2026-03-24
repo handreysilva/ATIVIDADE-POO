@@ -2,12 +2,24 @@ package org.example;
 
 public class Carro {
 
-    // atributos agora são privados (encapsulamento)
     private String marca;
     private String modelo;
     private int ano;
 
-    // GETTERS (pegam o valor)
+    // CONSTRUTOR (novo)
+    public Carro(String marca, String modelo, int ano) {
+        this.marca = marca;
+        this.modelo = modelo;
+
+        // usando validação no construtor também
+        if (ano < 1886 || ano > 2026) {
+            System.out.println("Erro: ano inválido!");
+        } else {
+            this.ano = ano;
+        }
+    }
+
+    // getters
     public String getMarca() {
         return marca;
     }
@@ -20,7 +32,7 @@ public class Carro {
         return ano;
     }
 
-    // SETTERS (alteram o valor)
+    // setters
     public void setMarca(String marca) {
         this.marca = marca;
     }
@@ -30,7 +42,6 @@ public class Carro {
     }
 
     public void setAno(int ano) {
-        // validação
         if (ano < 1886 || ano > 2026) {
             System.out.println("Erro: ano inválido!");
         } else {
@@ -38,7 +49,6 @@ public class Carro {
         }
     }
 
-    // método exibir atualizado
     public void exibir() {
         System.out.println("Marca: " + marca);
         System.out.println("Modelo: " + modelo);
