@@ -8,12 +8,15 @@ public class Carro {
 
     public static int totalCarros = 0;
 
+    // CONSTANTE (final)
+    public static final int ANO_PRIMEIRO_CARRO = 1886;
+
     // construtor com parâmetros
     public Carro(String marca, String modelo, int ano) {
         this.marca = marca;
         this.modelo = modelo;
 
-        if (ano < 1886 || ano > 2026) {
+        if (ano < ANO_PRIMEIRO_CARRO || ano > 2026) {
             System.out.println("Erro: ano inválido!");
         } else {
             this.ano = ano;
@@ -31,24 +34,9 @@ public class Carro {
         totalCarros++;
     }
 
-    // MÉTODO STATIC
+    // método static
     public static void imprimirTotal() {
         System.out.println("Total de carros: " + totalCarros);
-
-        // TESTE (DESCOMENTE PARA VER O ERRO)
-        // System.out.println(modelo);
-
-        /*
-        Isso dá erro porque:
-
-        - método static NÃO pertence ao objeto
-        - pertence à classe
-
-        - "modelo" é atributo de INSTÂNCIA (objeto)
-        - o método static não sabe qual objeto usar
-
-        Por isso NÃO pode acessar diretamente
-        */
     }
 
     // getters
@@ -61,7 +49,7 @@ public class Carro {
     public void setModelo(String modelo) { this.modelo = modelo; }
 
     public void setAno(int ano) {
-        if (ano < 1886 || ano > 2026) {
+        if (ano < ANO_PRIMEIRO_CARRO || ano > 2026) {
             System.out.println("Erro: ano inválido!");
         } else {
             this.ano = ano;

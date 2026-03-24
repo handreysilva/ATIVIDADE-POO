@@ -5,22 +5,35 @@ public class Main {
     public static void main(String[] args) {
 
         Carro c1 = new Carro("Toyota", "Corolla", 2020);
-        Carro c2 = new Carro("Honda", "Civic", 2022);
+        Carro c2 = new Carro("Ford", "Focus", 1800); // inválido
 
-        // chamando método static
         Carro.imprimirTotal();
+
+        // TESTE (DESCOMENTE PRA VER ERRO)
+        // Carro.ANO_PRIMEIRO_CARRO = 1900;
 
         /*
-        MÉTODO STATIC:
+        FINAL:
 
-        - Chamado pela classe, não pelo objeto
-        - Não precisa de "new"
+        - Uma variável final NÃO pode ser alterada
+        - É uma constante
 
-        Por isso:
-        Carro.imprimirTotal();
+        Por isso usamos:
+        static final
 
-        E não:
-        c1.imprimirTotal();
+        SIGNIFICA:
+        - static → pertence à classe
+        - final → valor fixo
+
+        Exemplo:
+        ANO_PRIMEIRO_CARRO = 1886
+
+        Se tentar mudar:
+        → dá erro de compilação
+
+        Vantagem:
+        - evita valores mágicos no código
+        - melhora organização e segurança
         */
     }
 }
