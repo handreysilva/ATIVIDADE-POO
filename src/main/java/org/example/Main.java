@@ -4,27 +4,34 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int x; // declarada fora
+        int a = 10;
+        int b = a;
+        b = 99;
 
-        if (true) {
-            x = 10; // atribuída dentro
-        }
+        System.out.println("a = " + a);
+        System.out.println("b = " + b);
 
-        System.out.println(x); // agora funciona
+        /*
+        TIPOS PRIMITIVOS:
+
+        - Variáveis primitivas (int, double, etc) guardam VALOR diretamente
+        - Quando fazemos b = a, copiamos o valor
+
+        Depois:
+        - Alterar b NÃO altera a
+
+        Resultado:
+        a = 10
+        b = 99
+        */
     }
 }
 /*
-ESCOPO:
+Tipos primitivos são armazenados por valor.
 
-- Escopo é a região onde uma variável existe
-- A variável x foi criada dentro do if
-- Fora do if ela não existe
+Quando atribuímos b = a:
+- o valor é copiado
 
-Por isso deu erro
-
-Correção:
-- Declarar a variável fora do bloco
-
-Resumo:
-- Variáveis só existem dentro do bloco onde foram criadas
+Alterar b não afeta a,
+pois cada variável tem seu próprio espaço na memória.
 */
