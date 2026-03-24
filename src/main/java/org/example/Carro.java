@@ -1,6 +1,6 @@
 package org.example;
 
-public class Cargit ro {
+public class Carro {
 
     // atributos
     String marca;

@@ -1,40 +1,45 @@
 package org.example;
 
-public class Magit in {
+public class Main {
 
     public static void main(String[] args) {
 
-        // Criando primeiro objeto da classe Carro
+        // criando objetos
         Carro carro1 = new Carro();
         carro1.marca = "Toyota";
         carro1.modelo = "Corolla";
         carro1.ano = 2020;
 
-        // Criando segundo objeto da classe Carro
         Carro carro2 = new Carro();
         carro2.marca = "Honda";
         carro2.modelo = "Civic";
         carro2.ano = 2022;
 
-        // Imprimindo dados do primeiro carro
+        // chamando método void (só executa)
         System.out.println("Carro 1:");
-        System.out.println("Marca: " + carro1.marca);
-        System.out.println("Modelo: " + carro1.modelo);
-        System.out.println("Ano: " + carro1.ano);
+        carro1.exibir();
 
-        System.out.println("------------------------");
+        // chamando método com retorno
+        System.out.println("Idade do carro: " + carro1.idadeDoCarro());
 
-        // Imprimindo dados do segundo carro
+        System.out.println("----------------------");
+
         System.out.println("Carro 2:");
-        System.out.println("Marca: " + carro2.marca);
-        System.out.println("Modelo: " + carro2.modelo);
-        System.out.println("Ano: " + carro2.ano);
+        carro2.exibir();
+        System.out.println("Idade do carro: " + carro2.idadeDoCarro());
 
-        // Explicação (coloque como comentário no código)
         /*
-        Criamos objetos da classe Carro usando a palavra "new".
-        Cada objeto possui seus próprios valores para marca, modelo e ano.
-        Aqui estamos acessando os atributos diretamente (sem encapsulamento).
+        MÉTODO VOID:
+        - Não retorna valor
+        - Apenas executa uma ação (exibir dados)
+
+        MÉTODO COM RETORNO:
+        - Retorna um valor (int neste caso)
+        - Pode ser usado dentro de um println ou variável
+
+        Diferença:
+        - void → faz algo
+        - int (ou outro tipo) → devolve algo
         */
     }
 }
