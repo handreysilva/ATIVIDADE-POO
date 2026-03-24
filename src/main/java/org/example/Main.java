@@ -6,31 +6,27 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // criando lista de carros
         ArrayList<Carro> listaCarros = new ArrayList<>();
 
-        // criando carros
         Carro c1 = new Carro();
-        c1.marca = "Toyota";
-        c1.modelo = "Corolla";
-        c1.ano = 2020;
+        c1.setMarca("Toyota");
+        c1.setModelo("Corolla");
+        c1.setAno(2020);
 
         Carro c2 = new Carro();
-        c2.marca = "Honda";
-        c2.modelo = "Civic";
-        c2.ano = 2022;
+        c2.setMarca("Honda");
+        c2.setModelo("Civic");
+        c2.setAno(2022);
 
         Carro c3 = new Carro();
-        c3.marca = "Ford";
-        c3.modelo = "Focus";
-        c3.ano = 2018;
+        c3.setMarca("Ford");
+        c3.setModelo("Focus");
+        c3.setAno(1800); // inválido (vai mostrar erro)
 
-        // adicionando na lista
         listaCarros.add(c1);
         listaCarros.add(c2);
         listaCarros.add(c3);
 
-        // percorrendo com for-each
         for (Carro carro : listaCarros) {
             carro.exibir();
             System.out.println("Idade: " + carro.idadeDoCarro());
@@ -38,17 +34,23 @@ public class Main {
         }
 
         /*
-        ArrayList:
-        - É uma lista dinâmica (pode crescer)
-        - Armazena vários objetos do mesmo tipo
+        ENCAPSULAMENTO:
+        - Protege os dados da classe
+        - Só permite acesso através de métodos (get e set)
 
-        for-each:
-        - Percorre automaticamente todos os elementos da lista
-        - A cada volta, "carro" representa um item da lista
+        Antes:
+        carro.marca = "Toyota" ❌
 
-        Exemplo:
-        listaCarros = [c1, c2, c3]
-        O for-each vai passar por todos automaticamente
+        Agora:
+        carro.setMarca("Toyota") ✅
+
+        VALIDAÇÃO:
+        - O setter do ano impede valores inválidos
+        - Isso evita erros no sistema
+
+        Vantagem:
+        - Mais segurança
+        - Mais controle sobre os dados
         */
     }
 }
