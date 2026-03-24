@@ -4,40 +4,34 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Carro c1 = new Carro("Fiat", "Uno", 2020);
-        Carro c2 = c1;
+        Carro meuCarro = new Carro("VW", "Gol", 2015);
 
-        c2.setModelo("Palio");
+        trocarModelo(meuCarro);
 
-        System.out.println(c1.getModelo());
-        System.out.println(c2.getModelo());
+        System.out.println(meuCarro.getModelo());
 
         /*
-        OBJETOS (REFERÊNCIA):
+        Chamamos o método passando o objeto
 
-        - c1 guarda o endereço do objeto
-        - c2 recebe o MESMO endereço
+        O objeto foi alterado dentro do método
+        */
+    }
 
-        Ou seja:
-        c1 e c2 apontam para o MESMO objeto
+    public static void trocarModelo(Carro c) {
+        c.setModelo("Fusca");
 
-        Alterar c2 altera o mesmo objeto que c1 aponta
+        /*
+        O parâmetro "c" aponta para o MESMO objeto que meuCarro
+
+        Não é uma cópia do objeto!
         */
     }
 }
 /*
-Diferença entre primitivo e objeto:
+O parâmetro c aponta para o mesmo objeto que meuCarro.
 
-- Primitivo (int):
-  → armazenado na STACK
-  → guarda valor direto
-  → cópia independente
+Quando o método recebe um objeto, ele recebe a referência (endereço),
+não uma cópia.
 
-- Objeto (Carro):
-  → objeto fica na HEAP
-  → variável guarda referência (endereço)
-  → múltiplas variáveis podem apontar para o mesmo objeto
-
-Por isso:
-- Alterar objeto afeta todas as referências
+Por isso, alterações feitas dentro do método afetam o objeto original.
 */
