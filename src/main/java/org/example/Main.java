@@ -4,34 +4,40 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int a = 10;
-        int b = a;
-        b = 99;
+        Carro c1 = new Carro("Fiat", "Uno", 2020);
+        Carro c2 = c1;
 
-        System.out.println("a = " + a);
-        System.out.println("b = " + b);
+        c2.setModelo("Palio");
+
+        System.out.println(c1.getModelo());
+        System.out.println(c2.getModelo());
 
         /*
-        TIPOS PRIMITIVOS:
+        OBJETOS (REFERÊNCIA):
 
-        - Variáveis primitivas (int, double, etc) guardam VALOR diretamente
-        - Quando fazemos b = a, copiamos o valor
+        - c1 guarda o endereço do objeto
+        - c2 recebe o MESMO endereço
 
-        Depois:
-        - Alterar b NÃO altera a
+        Ou seja:
+        c1 e c2 apontam para o MESMO objeto
 
-        Resultado:
-        a = 10
-        b = 99
+        Alterar c2 altera o mesmo objeto que c1 aponta
         */
     }
 }
 /*
-Tipos primitivos são armazenados por valor.
+Diferença entre primitivo e objeto:
 
-Quando atribuímos b = a:
-- o valor é copiado
+- Primitivo (int):
+  → armazenado na STACK
+  → guarda valor direto
+  → cópia independente
 
-Alterar b não afeta a,
-pois cada variável tem seu próprio espaço na memória.
+- Objeto (Carro):
+  → objeto fica na HEAP
+  → variável guarda referência (endereço)
+  → múltiplas variáveis podem apontar para o mesmo objeto
+
+Por isso:
+- Alterar objeto afeta todas as referências
 */
