@@ -8,14 +8,14 @@ public class Main {
 
         ArrayList<Carro> listaCarros = new ArrayList<>();
 
-        // agora criando direto com construtor
+        // usando construtor com parâmetros
         Carro c1 = new Carro("Toyota", "Corolla", 2020);
-        Carro c2 = new Carro("Honda", "Civic", 2022);
-        Carro c3 = new Carro("Ford", "Focus", 1800); // inválido
+
+        // usando construtor vazio
+        Carro c2 = new Carro();
 
         listaCarros.add(c1);
         listaCarros.add(c2);
-        listaCarros.add(c3);
 
         for (Carro carro : listaCarros) {
             carro.exibir();
@@ -24,21 +24,20 @@ public class Main {
         }
 
         /*
-        CONSTRUTOR:
-        - É executado quando o objeto é criado
-        - Serve para inicializar os atributos
+        SOBRECARGA DE CONSTRUTOR:
 
-        Vantagem:
-        - Evita ter que usar vários setters
-        - Objeto já nasce pronto
+        - Podemos ter vários construtores na mesma classe
+        - O que muda são os parâmetros
 
-        Antes:
-        Carro c = new Carro();
-        c.setMarca("Toyota");
-        c.setModelo("Corolla");
+        Diferença:
 
-        Agora:
-        Carro c = new Carro("Toyota", "Corolla", 2020);
+        Construtor com parâmetros:
+        → Objeto nasce com valores definidos
+
+        Construtor vazio:
+        → Objeto nasce com valores padrão
+
+        Isso dá mais flexibilidade no código
         */
     }
 }

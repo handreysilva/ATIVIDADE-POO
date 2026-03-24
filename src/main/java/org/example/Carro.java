@@ -6,17 +6,23 @@ public class Carro {
     private String modelo;
     private int ano;
 
-    // CONSTRUTOR (novo)
+    // CONSTRUTOR 1 (com parâmetros)
     public Carro(String marca, String modelo, int ano) {
         this.marca = marca;
         this.modelo = modelo;
 
-        // usando validação no construtor também
         if (ano < 1886 || ano > 2026) {
             System.out.println("Erro: ano inválido!");
         } else {
             this.ano = ano;
         }
+    }
+
+    // CONSTRUTOR 2 (sem parâmetros)
+    public Carro() {
+        this.marca = "Desconhecido";
+        this.modelo = "Desconhecido";
+        this.ano = 0;
     }
 
     // getters
