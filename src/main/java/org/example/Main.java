@@ -1,45 +1,54 @@
 package org.example;
 
+import java.util.ArrayList;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        // criando objetos
-        Carro carro1 = new Carro();
-        carro1.marca = "Toyota";
-        carro1.modelo = "Corolla";
-        carro1.ano = 2020;
+        // criando lista de carros
+        ArrayList<Carro> listaCarros = new ArrayList<>();
 
-        Carro carro2 = new Carro();
-        carro2.marca = "Honda";
-        carro2.modelo = "Civic";
-        carro2.ano = 2022;
+        // criando carros
+        Carro c1 = new Carro();
+        c1.marca = "Toyota";
+        c1.modelo = "Corolla";
+        c1.ano = 2020;
 
-        // chamando método void (só executa)
-        System.out.println("Carro 1:");
-        carro1.exibir();
+        Carro c2 = new Carro();
+        c2.marca = "Honda";
+        c2.modelo = "Civic";
+        c2.ano = 2022;
 
-        // chamando método com retorno
-        System.out.println("Idade do carro: " + carro1.idadeDoCarro());
+        Carro c3 = new Carro();
+        c3.marca = "Ford";
+        c3.modelo = "Focus";
+        c3.ano = 2018;
 
-        System.out.println("----------------------");
+        // adicionando na lista
+        listaCarros.add(c1);
+        listaCarros.add(c2);
+        listaCarros.add(c3);
 
-        System.out.println("Carro 2:");
-        carro2.exibir();
-        System.out.println("Idade do carro: " + carro2.idadeDoCarro());
+        // percorrendo com for-each
+        for (Carro carro : listaCarros) {
+            carro.exibir();
+            System.out.println("Idade: " + carro.idadeDoCarro());
+            System.out.println("----------------------");
+        }
 
         /*
-        MÉTODO VOID:
-        - Não retorna valor
-        - Apenas executa uma ação (exibir dados)
+        ArrayList:
+        - É uma lista dinâmica (pode crescer)
+        - Armazena vários objetos do mesmo tipo
 
-        MÉTODO COM RETORNO:
-        - Retorna um valor (int neste caso)
-        - Pode ser usado dentro de um println ou variável
+        for-each:
+        - Percorre automaticamente todos os elementos da lista
+        - A cada volta, "carro" representa um item da lista
 
-        Diferença:
-        - void → faz algo
-        - int (ou outro tipo) → devolve algo
+        Exemplo:
+        listaCarros = [c1, c2, c3]
+        O for-each vai passar por todos automaticamente
         */
     }
 }
