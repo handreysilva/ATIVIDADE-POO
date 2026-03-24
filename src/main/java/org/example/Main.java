@@ -1,43 +1,38 @@
 package org.example;
 
-import java.util.ArrayList;
-
 public class Main {
 
     public static void main(String[] args) {
 
-        ArrayList<Carro> listaCarros = new ArrayList<>();
-
-        // usando construtor com parâmetros
+        // criando vários carros
         Carro c1 = new Carro("Toyota", "Corolla", 2020);
+        Carro c2 = new Carro("Honda", "Civic", 2022);
+        Carro c3 = new Carro();
+        Carro c4 = new Carro();
+        Carro c5 = new Carro("Ford", "Focus", 2018);
 
-        // usando construtor vazio
-        Carro c2 = new Carro();
-
-        listaCarros.add(c1);
-        listaCarros.add(c2);
-
-        for (Carro carro : listaCarros) {
-            carro.exibir();
-            System.out.println("Idade: " + carro.idadeDoCarro());
-            System.out.println("----------------------");
-        }
+        // mostrando total de carros criados
+        System.out.println("Total de carros criados: " + Carro.totalCarros);
 
         /*
-        SOBRECARGA DE CONSTRUTOR:
+        STATIC:
 
-        - Podemos ter vários construtores na mesma classe
-        - O que muda são os parâmetros
+        - totalCarros pertence à CLASSE, não ao objeto
+        - Todos os objetos compartilham essa variável
 
-        Diferença:
+        Por isso usamos:
+        Carro.totalCarros
 
-        Construtor com parâmetros:
-        → Objeto nasce com valores definidos
+        E não:
+        c1.totalCarros
 
-        Construtor vazio:
-        → Objeto nasce com valores padrão
+        DIFERENÇA:
 
-        Isso dá mais flexibilidade no código
+        Atributo normal:
+        → cada objeto tem o seu
+
+        Atributo static:
+        → existe apenas UM para toda a classe
         */
     }
 }
