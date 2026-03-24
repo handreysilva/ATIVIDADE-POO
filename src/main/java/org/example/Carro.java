@@ -6,10 +6,9 @@ public class Carro {
     private String modelo;
     private int ano;
 
-    // atributo STATIC (pertence à classe, não ao objeto)
     public static int totalCarros = 0;
 
-    // CONSTRUTOR COM PARÂMETROS
+    // construtor com parâmetros
     public Carro(String marca, String modelo, int ano) {
         this.marca = marca;
         this.modelo = modelo;
@@ -20,16 +19,36 @@ public class Carro {
             this.ano = ano;
         }
 
-        totalCarros++; // incrementa sempre que cria um carro
+        totalCarros++;
     }
 
-    // CONSTRUTOR VAZIO
+    // construtor vazio
     public Carro() {
         this.marca = "Desconhecido";
         this.modelo = "Desconhecido";
         this.ano = 0;
 
-        totalCarros++; // também conta aqui
+        totalCarros++;
+    }
+
+    // MÉTODO STATIC
+    public static void imprimirTotal() {
+        System.out.println("Total de carros: " + totalCarros);
+
+        // TESTE (DESCOMENTE PARA VER O ERRO)
+        // System.out.println(modelo);
+
+        /*
+        Isso dá erro porque:
+
+        - método static NÃO pertence ao objeto
+        - pertence à classe
+
+        - "modelo" é atributo de INSTÂNCIA (objeto)
+        - o método static não sabe qual objeto usar
+
+        Por isso NÃO pode acessar diretamente
+        */
     }
 
     // getters
