@@ -4,34 +4,25 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Carro meuCarro = new Carro("VW", "Gol", 2015);
+        Cliente c1 = new Cliente("João", "joao@email.com");
+        Cliente c2 = new Cliente("Maria", "maria@email.com");
+        Cliente c3 = new Cliente("Pedro");
 
-        trocarModelo(meuCarro);
+        System.out.println("CLIENTE 1:");
+        c1.exibir();
 
-        System.out.println(meuCarro.getModelo());
+        System.out.println("------------------");
 
-        /*
-        Chamamos o método passando o objeto
+        System.out.println("CLIENTE 2:");
+        c2.exibir();
 
-        O objeto foi alterado dentro do método
-        */
-    }
+        System.out.println("------------------");
 
-    public static void trocarModelo(Carro c) {
-        c.setModelo("Fusca");
+        System.out.println("CLIENTE 3:");
+        c3.exibir();
 
-        /*
-        O parâmetro "c" aponta para o MESMO objeto que meuCarro
+        System.out.println("------------------");
 
-        Não é uma cópia do objeto!
-        */
+        System.out.println("Total de clientes: " + Cliente.totalClientes);
     }
 }
-/*
-O parâmetro c aponta para o mesmo objeto que meuCarro.
-
-Quando o método recebe um objeto, ele recebe a referência (endereço),
-não uma cópia.
-
-Por isso, alterações feitas dentro do método afetam o objeto original.
-*/
