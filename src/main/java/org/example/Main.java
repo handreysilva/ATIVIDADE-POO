@@ -8,17 +8,20 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        ArrayList<Carro> lista = new ArrayList<>();
+
+        ArrayList<Lanche> cardapio = new ArrayList<>();
+        ArrayList<Pedido> pedidos = new ArrayList<>();
 
         int opcao;
 
         do {
-            System.out.println("\n=======================");
-            System.out.println("1 - Cadastrar Carro");
-            System.out.println("2 - Listar todos");
-            System.out.println("3 - Total cadastrado");
-            System.out.println("4 - Sair");
-            System.out.println("=======================");
+            System.out.println("\n========================");
+            System.out.println("1 - Cadastrar Lanche");
+            System.out.println("2 - Fazer Pedido");
+            System.out.println("3 - Listar Pedidos");
+            System.out.println("4 - Total de Pedidos");
+            System.out.println("0 - Sair");
+            System.out.println("========================");
             System.out.print("Escolha: ");
 
             opcao = sc.nextInt();
@@ -27,41 +30,58 @@ public class Main {
             switch (opcao) {
 
                 case 1:
-                    // cadastrar
-                    System.out.print("Marca: ");
-                    String marca = sc.nextLine();
+                    // cadastrar lanche
+                    System.out.print("Nome do lanche: ");
+                    String nome = sc.nextLine();
 
-                    System.out.print("Modelo: ");
-                    String modelo = sc.nextLine();
-
-                    System.out.print("Ano: ");
-                    int ano = sc.nextInt();
+                    System.out.print("Preço: ");
+                    double preco = sc.nextDouble();
                     sc.nextLine();
 
-                    Carro carro = new Carro(marca, modelo, ano);
-                    lista.add(carro);
+                    Lanche lanche = new Lanche(nome, preco);
+                    cardapio.add(lanche);
 
-                    System.out.println("Carro cadastrado!");
+                    System.out.println("Lanche cadastrado!");
                     break;
 
                 case 2:
-                    // listar
-                    if (lista.isEmpty()) {
-                        System.out.println("Nenhum carro cadastrado.");
+                    // fazer pedido
+                    if (cardapio.isEmpty()) {
+                        System.out.println("Nenhum lanche cadastrado.");
                     } else {
-                        for (Carro c : lista) {
-                            System.out.println("------------------");
-                            c.exibir();
+                        System.out.println("Escolha um lanche:");
+
+                        for (int i = 0; i < cardapio.size(); i++) {
+                            System.out.println(i + " - " + cardapio.get(i).getNome());
                         }
+
+                        int escolha = sc.nextInt();
+                        sc.nextLine();
+
+                        Pedido pedido = new Pedido(cardapio.get(escolha));
+                        pedidos.add(pedido);
+
+                        System.out.println("Pedido realizado!");
                     }
                     break;
 
                 case 3:
-                    // total
-                    System.out.println("Total de carros: " + Carro.totalCarros);
+                    // listar pedidos
+                    if (pedidos.isEmpty()) {
+                        System.out.println("Nenhum pedido.");
+                    } else {
+                        for (Pedido p : pedidos) {
+                            System.out.println("------------------");
+                            p.exibir();
+                        }
+                    }
                     break;
 
                 case 4:
+                    System.out.println("Total de pedidos: " + Pedido.totalPedidos);
+                    break;
+
+                case 0:
                     System.out.println("Saindo...");
                     break;
 
@@ -69,7 +89,7 @@ public class Main {
                     System.out.println("Opção inválida!");
             }
 
-        } while (opcao != 4);
+        } while (opcao != 0);
 
         sc.close();
     }
