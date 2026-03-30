@@ -1,28 +1,76 @@
 package org.example;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        Cliente c1 = new Cliente("João", "joao@email.com");
-        Cliente c2 = new Cliente("Maria", "maria@email.com");
-        Cliente c3 = new Cliente("Pedro");
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Carro> lista = new ArrayList<>();
 
-        System.out.println("CLIENTE 1:");
-        c1.exibir();
+        int opcao;
 
-        System.out.println("------------------");
+        do {
+            System.out.println("\n=======================");
+            System.out.println("1 - Cadastrar Carro");
+            System.out.println("2 - Listar todos");
+            System.out.println("3 - Total cadastrado");
+            System.out.println("4 - Sair");
+            System.out.println("=======================");
+            System.out.print("Escolha: ");
 
-        System.out.println("CLIENTE 2:");
-        c2.exibir();
+            opcao = sc.nextInt();
+            sc.nextLine();
 
-        System.out.println("------------------");
+            switch (opcao) {
 
-        System.out.println("CLIENTE 3:");
-        c3.exibir();
+                case 1:
+                    // cadastrar
+                    System.out.print("Marca: ");
+                    String marca = sc.nextLine();
 
-        System.out.println("------------------");
+                    System.out.print("Modelo: ");
+                    String modelo = sc.nextLine();
 
-        System.out.println("Total de clientes: " + Cliente.totalClientes);
+                    System.out.print("Ano: ");
+                    int ano = sc.nextInt();
+                    sc.nextLine();
+
+                    Carro carro = new Carro(marca, modelo, ano);
+                    lista.add(carro);
+
+                    System.out.println("Carro cadastrado!");
+                    break;
+
+                case 2:
+                    // listar
+                    if (lista.isEmpty()) {
+                        System.out.println("Nenhum carro cadastrado.");
+                    } else {
+                        for (Carro c : lista) {
+                            System.out.println("------------------");
+                            c.exibir();
+                        }
+                    }
+                    break;
+
+                case 3:
+                    // total
+                    System.out.println("Total de carros: " + Carro.totalCarros);
+                    break;
+
+                case 4:
+                    System.out.println("Saindo...");
+                    break;
+
+                default:
+                    System.out.println("Opção inválida!");
+            }
+
+        } while (opcao != 4);
+
+        sc.close();
     }
 }
