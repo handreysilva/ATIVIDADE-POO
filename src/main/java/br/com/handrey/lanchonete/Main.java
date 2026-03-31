@@ -1,4 +1,4 @@
-package org.example;
+package br.com.handrey.lanchonete;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -30,7 +30,6 @@ public class Main {
             switch (opcao) {
 
                 case 1:
-                    // cadastrar lanche
                     System.out.print("Nome do lanche: ");
                     String nome = sc.nextLine();
 
@@ -45,7 +44,6 @@ public class Main {
                     break;
 
                 case 2:
-                    // fazer pedido
                     if (cardapio.isEmpty()) {
                         System.out.println("Nenhum lanche cadastrado.");
                     } else {
@@ -66,7 +64,6 @@ public class Main {
                     break;
 
                 case 3:
-                    // listar pedidos
                     if (pedidos.isEmpty()) {
                         System.out.println("Nenhum pedido.");
                     } else {

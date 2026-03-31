@@ -1,4 +1,4 @@
-package org.example;
+package br.com.handrey.lanchonete;
 
 public class Pedido {
 

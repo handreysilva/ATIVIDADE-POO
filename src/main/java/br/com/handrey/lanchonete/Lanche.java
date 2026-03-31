@@ -1,4 +1,4 @@
-package org.example;
+package br.com.handrey.lanchonete;
 
 public class Lanche {
 
@@ -7,7 +7,7 @@ public class Lanche {
 
     public Lanche(String nome, double preco) {
         this.nome = nome;
-        setPreco(preco); // usa validação
+        setPreco(preco); // validação
     }
 
     public String getNome() {
